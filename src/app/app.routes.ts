@@ -9,7 +9,7 @@ export const routes: Routes = [
     },
     {
         path: 'user',
-        loadComponent: () => import('./user/layout/layout.component').then(c => c.LayoutComponent)
+        loadChildren: () => import('./user/layout/layout.routes').then(c => c.UserLayoutRoutesModule)
     },
     {
         path: 'admin',
