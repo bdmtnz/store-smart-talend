@@ -4,10 +4,15 @@
     font-family: "Roboto", sans-serif;
     font-weight: 380;
     font-style: normal;
-    font-size: 14px;
+    // font-size: 14px;
 }
 body {
     padding: 0;
     margin: 0;
     background-color: #F7F7F7;
 }
+html, body { height: 100%; }
+p {
+    margin: 0;
+}
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

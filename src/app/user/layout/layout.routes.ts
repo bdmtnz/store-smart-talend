@@ -3,6 +3,7 @@ import { RouterModule, RouterOutlet, Routes } from "@angular/router";
 import { LayoutComponent } from "./layout.component";
 import { AppComponent } from "../../app.component";
 import { CommonModule } from "@angular/common";
+import { UserHeaderComponent } from "../shared/components/user-header/user-header.component";
 
 export const userLayoutRoutes: Routes = [
     {
@@ -30,7 +31,8 @@ export const userLayoutRoutes: Routes = [
     imports: [
         CommonModule,        
         RouterOutlet,
-        RouterModule.forChild(userLayoutRoutes)
+        RouterModule.forChild(userLayoutRoutes),
+        UserHeaderComponent
     ]
 })
 export class UserLayoutRoutesModule { }
