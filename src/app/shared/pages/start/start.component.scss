@@ -3,4 +3,24 @@
     width: 100vw;
     overflow-y: auto;
     overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .flow {
+        display: flex;
+        flex-direction: column;
+
+        &-options{
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+
+            app-card {
+                width: 120px;
+                height: 200px;
+            }
+        }
+    }
 }

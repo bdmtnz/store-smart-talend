@@ -1,3 +1,19 @@
 <div class="start-selector">
-    <app-card _icon="search" _text="Lol" [_size]="80"></app-card>
+    <div class="flow">
+        <p>¿Quién eres?</p>
+        <div class="flow-options">
+            <app-card 
+                _icon="shopping_bag" 
+                _text="Comprador" 
+                [_size]="50"
+                (click)="redirect('user')"
+            ></app-card>
+            <app-card 
+                _icon="storefront" 
+                _text="Vendedor" 
+                [_size]="50"
+                (click)="redirect('admin')"
+            ></app-card>
+        </div>
+    </div>
 </div>
