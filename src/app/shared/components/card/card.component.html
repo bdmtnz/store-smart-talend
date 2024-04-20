@@ -1,1 +1,10 @@
-<p>card works!</p>
+<div class="card-selector">
+    <div class="card-icon">
+        <span class="material-symbols-outlined" [ngStyle]="{ 'font-size': size }">
+            {{icon}}
+        </span>
+    </div>
+    <div class="card-text">
+        <p>{{text}}</p>
+    </div>
+</div>

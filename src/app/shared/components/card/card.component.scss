@@ -1,0 +1,14 @@
+.card-selector {
+    cursor: default;
+    background-color: red;
+    .card-icon {
+        background-color: blue;
+        span {
+            transform: scale(.8);
+            cursor: inherit;
+        }
+    }
+    &:hover > .card-icon > span {
+        transform: scale(1);
+    }
+}
