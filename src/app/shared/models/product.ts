@@ -9,7 +9,18 @@ export enum EProductType {
     WarmFood = 'Warm food'
 }
 
-export class Product {
+export interface IProduct {
+    id: string
+    name: string
+    types: EProductType[]
+    value: number
+    profit: number
+    price: number
+    discount?: Discount
+    applyDiscount: (discount: Discount) => void
+}
+
+export class Product implements IProduct {
     id: string
     name: string
     types: EProductType[]
