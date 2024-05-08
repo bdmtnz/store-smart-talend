@@ -1,0 +1,8 @@
+.user-start-selector {
+    display: flex;
+    flex-wrap: wrap;
+
+    app-product-card {
+        width: 400px;
+    }
+}
