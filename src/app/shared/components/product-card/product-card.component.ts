@@ -1,5 +1,6 @@
 import { NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { IProduct } from '../../models/product';
 
 @Component({
   selector: 'app-product-card',
@@ -11,17 +12,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './product-card.component.scss'
 })
 export class ProductCardComponent {
-  @Input({required: true}) _text!: string
-  @Input({required: true}) _icon!: string
-  @Input({required: false}) _size: number = 24
+  @Input({required: true}) _product!: IProduct
 
-  get text() {
-    return this._text
-  }
-  get icon() {
-    return this._icon
-  }
-  get size() {
-    return `${this._size}pt`
+  get product() {
+    return this._product
   }
 }

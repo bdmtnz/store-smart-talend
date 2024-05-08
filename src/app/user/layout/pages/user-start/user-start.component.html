@@ -1,1 +1,16 @@
-<p>user-start works!</p>
+<div class="user-start-selector">
+    <h3>Recomendaciones</h3>
+    <div class="slider-container">
+        <div class="slider">
+            @for(el of []; track el.id) {
+                <app-card 
+                    _icon="shopping_bag" 
+                    _text="Comprador" 
+                    [_size]="50"
+                    (click)="redirect('user')"
+                ></app-card>
+            }
+        </div>
+    </div>
+    <div class="complete-space"></div>
+</div>

@@ -1,0 +1,48 @@
+.user-start-selector {
+    .slider-container {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .slider {
+            width: 400px;
+            height: calc(100vw - 15px);
+            background-color: red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            padding: 20px;
+            box-sizing: border-box;
+            position: absolute;
+            transform: rotate(-90deg);
+
+            &::-webkit-scrollbar {
+                width: 0px;
+            }
+    
+            &-item {
+                height: 120px;
+                min-height: 120px;
+                width: 120px;
+                min-width: 120px;
+                background-color: blue;
+                border-radius: 10px;
+                color: white;
+                
+                transform: rotate(90deg);
+            }
+        }
+    }
+    .complete-space {
+        height: 1000px;
+        width: 100%;
+        background-color: green;
+    }
+}

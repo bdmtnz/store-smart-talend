@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IProduct } from '../../../../shared/models/product';
 
 @Component({
   selector: 'app-user-start',
@@ -8,5 +9,4 @@ import { Component } from '@angular/core';
   styleUrl: './user-start.component.scss'
 })
 export class UserStartComponent {
-
 }
