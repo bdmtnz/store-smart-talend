@@ -1,4 +1,4 @@
-.card-selector {
+.product-card-selector {
     cursor: pointer;
     // background-color: red;
     width: 100%;
@@ -7,7 +7,7 @@
     border-radius: 4px;
     box-shadow: 0px 1px 30px 0px rgba(36, 38, 43, 0.10);
 
-    .card-icon {
+    .product-card-icon {
         // background-color: blue;
         display: flex;
         justify-content: center;
@@ -18,15 +18,16 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.022);
         border-radius: 3px;
-        span {
+        img {
             transition: ease-in;
             transition-duration: 500ms;
-            transform: scale(.8);
+            transform: scale(.98);
             cursor: inherit;
-            // background-color: green;
+            width: inherit;
+            height: inherit;
         }
     }
-    &:hover > .card-icon > span {
+    &:hover > .product-card-icon > img {
         transition: ease-in;
         transition-duration: 500ms;
         transform: scale(1);

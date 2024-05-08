@@ -1,4 +1,5 @@
 import { Discount, IDiscount } from "./discount"
+import * as uuid from 'uuid';
 
 export enum EProductType {
     Fruit = 'Fruit',
@@ -17,7 +18,9 @@ export interface IProduct {
     profit: number
     price: number
     discount?: Discount
-    applyDiscount: (discount: Discount) => void
+    img: string
+    applyDiscount: () => number
+    setDiscount: (discount: IDiscount) => void
 }
 
 export class Product implements IProduct {
@@ -28,24 +31,31 @@ export class Product implements IProduct {
     profit: number
     price: number
     discount?: Discount
+    img: string
 
     constructor(
         name: string,
         types: EProductType[],
         value: number,
         profit: number,
+        img: string,
         discount?: Discount
     ) {
-       this.id = Math.random().toString()
+       this.id = uuid.v4()
        this.name = name
        this.types = types 
        this.value = value
        this.profit = profit
        this.price = value * (1 + (profit / 100))
-       if(discount)  this.applyDiscount(discount)
+       this.img = img
+       if(discount)  this.setDiscount(discount)
     }
 
-    applyDiscount(discount: IDiscount) {
-        this.value = discount.apply(this.value)
+    setDiscount(discount: Discount) {
+        this.discount = discount
+    }
+    applyDiscount() {
+        if(!this.discount) return this.value
+        return this.discount.apply(this.value)
     }
 }
