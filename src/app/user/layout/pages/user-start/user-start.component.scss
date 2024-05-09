@@ -12,7 +12,6 @@
         position: relative;
         width: 100%;
         height: 400px;
-        background-color: gray;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -20,7 +19,6 @@
         .slider {
             width: 400px;
             height: calc(100vw - 15px);
-            background-color: red;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -37,13 +35,13 @@
             }
     
             &-item {
-                height: 120px;
-                min-height: 120px;
-                width: 120px;
-                min-width: 120px;
-                background-color: blue;
+                height: auto;
+                min-height: 300px;
+                width: 300px;
+                min-width: 300px;
                 border-radius: 10px;
                 color: white;
+                border: 1px solid red;
                 
                 transform: rotate(90deg);
             }
