@@ -1,14 +1,17 @@
 <div class="product-card-selector">
-    <div class="product-card-icon">
+    <div 
+        class="product-card-icon"
+        [ngStyle]="{ 'background-color': bgColor }"
+    >
         <img src={{data.img}} alt="product_img">
     </div>
     <div class="product-card-text">
         <p>{{type}}</p>
-        <h3>{{data.name}}</h3>
+        <h4>{{data.name}}</h4>
         <div class="product-card-price">
             <h4 [ngStyle]="{ 'text-decoration': 'line-through' }">{{price}}</h4>
             <h4>{{discount}}</h4>
         </div>
     </div>
 </div>
-<canvas id="canvas"></canvas>
+<canvas [id]="canvaId"></canvas>

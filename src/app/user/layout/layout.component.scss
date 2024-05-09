@@ -1,0 +1,13 @@
+.user-layout-selector {
+    position: relative;
+
+    app-user-header {
+        position: sticky;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        background-color: white;
+        z-index: 10;
+    }
+}
