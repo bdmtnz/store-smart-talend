@@ -1,23 +1,13 @@
-// .user-start-selector {
-//     display: flex;
-//     flex-wrap: wrap;
-
-//     app-product-card {
-//         width: 400px;
-//     }
-// }
-
 .user-start-selector {
     .jumbo {
         width: 100%;
-        height: 200px;
+        height: 160px;
         padding: 40px 10%;
         box-sizing: border-box;
         display: flex;
         align-items: center;
         position: relative;
         
-        background-image: url(https://wordpress.iqonic.design/foodsto/wp-content/uploads/2020/05/video-bg-4.jpg);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -42,6 +32,14 @@
         }
     }
 
+    .jumbo-recommended {        
+        background-image: url(https://wordpress.iqonic.design/foodsto/wp-content/uploads/2020/05/video-bg-4.jpg);
+    }
+
+    .jumbo-catalog {  
+        background-image: url(https://fotografias.lasexta.com/clipping/cmsimages01/2022/11/29/1F3E89E0-6810-43BF-9387-CD3DAC15B490/cuales-son-frutas-verduras-temporada-diciembre_98.jpg?crop=6720,3781,x0,y36&width=1900&height=1069&optimize=low&format=webply);
+    }
+
     .slider-container {
         position: relative;
         width: 100%;
@@ -52,11 +50,10 @@
 
         .slider {
             width: 400px;
-            height: calc(100vw - 15px);
+            height: calc(100vw - 20px);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
             overflow-x: hidden;
             overflow-y: scroll;
             padding: 10% 20px;
@@ -81,9 +78,26 @@
             }
         }
     }
-    .complete-space {
-        height: 1000px;
+
+    .catalog-wrap {
+        height: auto;
         width: 100%;
-        background-color: green;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 10%;
+        box-sizing: border-box;
+
+        &-item {
+            height: auto;
+            min-height: 300px;
+            width: 240px;
+            min-width: 240px;
+            border-radius: 10px;
+            color: white;
+            position: relative;
+        }
     }
 }

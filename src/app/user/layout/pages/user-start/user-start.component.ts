@@ -19,7 +19,7 @@ export class UserStartComponent {
   constructor() {
     let discount = new Discount(EDiscountType.Percentage, 10)
     this.product = new Product('Pera', [EProductType.Fruit], 1500, 30, image, discount)   
-    this.product2 = new Product('Pera', [EProductType.Fruit], 1500, 30, appleImg, discount)   
+    this.product2 = new Product('Manzana', [EProductType.Fruit], 1500, 30, appleImg)   
   }
 }
 

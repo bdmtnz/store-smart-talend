@@ -1,4 +1,4 @@
-import { NgStyle } from '@angular/common';
+import { CurrencyPipe, NgStyle } from '@angular/common';
 import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
 
@@ -6,7 +6,8 @@ import { Product } from '../../models/product';
   selector: 'app-product-card',
   standalone: true,
   imports: [
-    NgStyle
+    NgStyle,
+    CurrencyPipe
   ],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss'
@@ -40,10 +41,13 @@ export class ProductCardComponent implements AfterViewChecked, AfterViewInit {
     return this._data.types.join(', ')
   }
   get price() {
-    return `$ ${this._data.price}`
+    return this._data.price
   }
   get discount() {
-    return this._data.discount ? `$ ${this._data.applyDiscount()}` : ''
+    return this._data.discount ? this._data.applyDiscount() : ''
+  }
+  get discountPercentage() {
+    return this._data.discount ? `${this._data.discount.value}%` : '0%'
   }
 
   getDominantColor(image: string) {

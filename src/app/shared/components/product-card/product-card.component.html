@@ -1,4 +1,12 @@
 <div class="product-card-selector">
+    @if(discount) {
+        <div class="disccount-tag">
+            <label>{{discountPercentage}}</label>
+            <span class="material-icons">
+                sell
+            </span>
+        </div>
+    }
     <div 
         class="product-card-icon"
         [ngStyle]="{ 'background-color': bgColor }"
@@ -8,10 +16,17 @@
     <div class="product-card-text">
         <p>{{type}}</p>
         <h4>{{data.name}}</h4>
-        <div class="product-card-price">
-            <h4 [ngStyle]="{ 'text-decoration': 'line-through' }">{{price}}</h4>
-            <h4>{{discount}}</h4>
-        </div>
+        @if(discount) {
+            <div class="product-card-price">
+                <h5 [ngStyle]="{ 'text-decoration': 'line-through' }">{{price | currency}}</h5>
+                <h4>{{discount | currency}}</h4>
+            </div>
+        }
+        @else {
+            <div class="product-card-price">
+                <h4>{{price | currency}}</h4>
+            </div>
+        }
     </div>
 </div>
 <canvas [id]="canvaId"></canvas>

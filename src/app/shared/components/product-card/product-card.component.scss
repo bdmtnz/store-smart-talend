@@ -20,6 +20,32 @@
         margin: 0;
     }
 
+    .disccount-tag {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        top: -8px;
+        right: -8px;
+
+        label {
+            font-size: 8pt;
+            position: absolute;
+            z-index: 1;
+            font-weight: bold;
+            transform: rotate(45deg);
+        }
+
+        span {            
+            color: red;
+            transform: rotate(-90deg);
+            font-size: 40pt;
+        }
+    }
+
     .product-card-icon {
         // background-color: blue;
         display: flex;
@@ -29,7 +55,6 @@
         min-width: 100px;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.022);
         border-radius: 10px;
 
         img {
@@ -62,11 +87,26 @@
             display: flex;
             gap: 10px;
             align-items: center;
+            margin-top: 4px;
 
-            h4:first-child {
+            h5 {
                 font-size: 10pt;
                 font-weight: bold;
+                margin: 0;
+                padding: 0;
+            }
+
+            h4 {
+                font-size: 11pt;
             }
         }
-    }   
+    }
 }
+
+canvas {
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+} 
