@@ -76,6 +76,7 @@
     .product-card-text {
         width: 100%;
         color: gray;
+        position: relative;
 
         p {
             font-size: 8pt;
@@ -98,6 +99,90 @@
 
             h4 {
                 font-size: 11pt;
+            }
+        }
+
+        .add-product-cart {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            gap: 4px;
+            align-items: center;
+
+            .input-alter {
+                display: flex;
+                flex-direction: column;
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    padding: 0;
+                    margin: 0;
+                    cursor: pointer;
+                    height: 10px;
+                    width: 20px;
+                    position: relative;
+                    border-radius: 2px;
+
+                    &:hover {
+                        background-color: rgb(228, 228, 228);
+                    }
+
+                    span {     
+                        position: absolute;
+                        top: 0;
+                        left: 4px;               
+                        font-size: 8pt;
+                    }
+                }
+            }
+
+            input {
+                outline: none;
+                border: none;
+                width: 28px;
+                height: auto;
+                font-size: 11pt;
+                font-weight: 500;
+                color: gray;
+                background-color: transparent;
+                position: relative;
+                background-color: rgb(233, 233, 233);
+                border-radius: 2px;
+                text-align: center;
+            }
+
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-inner-spin-button {
+                opacity: 1;
+                display: none;
+            }
+
+            button {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                padding: 0;
+                margin: 0;
+                cursor: pointer;
+                height: 20px;
+                width: 20px;
+                position: relative;
+                border-radius: 2px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background-color: rgb(228, 228, 228);
+                }
+
+                span {
+                    font-size: 10pt;
+                    color: gray;
+                }
             }
         }
     }

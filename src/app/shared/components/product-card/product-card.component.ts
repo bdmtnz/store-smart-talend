@@ -1,13 +1,16 @@
-import { CurrencyPipe, NgStyle } from '@angular/common';
-import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnInit } from '@angular/core';
+import { CommonModule, CurrencyPipe, NgStyle } from '@angular/common';
+import { AfterViewChecked, AfterViewInit, Component, Input } from '@angular/core';
 import { Product } from '../../models/product';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
   imports: [
     NgStyle,
-    CurrencyPipe
+    CurrencyPipe,
+    FormsModule,
+    CommonModule
   ],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss'
@@ -16,6 +19,7 @@ export class ProductCardComponent implements AfterViewChecked, AfterViewInit {
   @Input({required: true}) _data!: Product
   //private backgroundColor: string = 'rgba(0, 0, 0, 0.022)'
   private backgroundColor: string = 'transparent'
+  cart: number = 1
 
   ngAfterViewChecked(): void {
     //this.getDominantColor(this._data.img)
@@ -66,5 +70,19 @@ export class ProductCardComponent implements AfterViewChecked, AfterViewInit {
     this.backgroundColor = `rgba(${i[0]},${i[1]},${i[2]},0.1)`
     // console.log(this.backgroundColor);
     // console.log("#" + ((1 << 24) + (i[0] << 16) + (i[1] << 8) + i[2]).toString(16).slice(1));
+  }
+
+  increaseQuantity() {
+    if(this.cart >= 999) return
+    this.cart += 1
+  }
+
+  decreaseQuantity() {
+    if(this.cart <= 1) return
+    this.cart -= 1    
+  }
+
+  addToCart() {
+    
   }
 }

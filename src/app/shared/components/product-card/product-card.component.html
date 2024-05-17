@@ -16,17 +16,39 @@
     <div class="product-card-text">
         <p>{{type}}</p>
         <h4>{{data.name}}</h4>
-        @if(discount) {
-            <div class="product-card-price">
+        <div class="product-card-price">
+            @if(discount) {
                 <h5 [ngStyle]="{ 'text-decoration': 'line-through' }">{{price | currency}}</h5>
                 <h4>{{discount | currency}}</h4>
-            </div>
-        }
-        @else {
-            <div class="product-card-price">
+            }
+            @else {
                 <h4>{{price | currency}}</h4>
+            }
+            <div class="add-product-cart">
+                <div class="input-alter">
+                    <button (click)="increaseQuantity()">
+                        <span class="material-icons">
+                            expand_less
+                        </span>
+                    </button>
+                    <button (click)="decreaseQuantity()">
+                        <span class="material-icons">
+                            expand_more
+                        </span>
+                    </button>
+                </div>
+                <input 
+                    title="Cantidad a agregar en el carrito" 
+                    type="number"
+                    [(ngModel)]="cart"
+                >
+                <button (click)="addToCart()">
+                    <span class="material-icons">
+                        shopping_cart
+                    </span>
+                </button>
             </div>
-        }
+        </div>
     </div>
 </div>
 <canvas [id]="canvaId"></canvas>
